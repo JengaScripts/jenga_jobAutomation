@@ -1,0 +1,21 @@
+{
+     "token": "",
+     "useQB": false,
+     "guildId": "", 
+     "defaultJob": "unemployed",
+     "defaultGrade": 0,
+     "jobGrades": {
+          "1175281906724634724": {
+               "job": "police",
+               "grade": 0
+          },
+          "1175281906724634725": {
+               "job": "police",
+               "grade": 1
+          },
+          "1175281906724634726": {
+               "job": "police",
+               "grade": 1
+          }
+     }
+}

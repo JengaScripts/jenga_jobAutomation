@@ -33,7 +33,7 @@ else {
                          const myJSON = JSON.stringify(config.jobGrades);
                          removedRoleIDs.forEach(element => {
                               if (myJSON.includes(element.toString())) {
-                                   exports[GetCurrentResourceName()].SetJob(newMember.id, defaultJob, defaultGrade);
+                                   exports[GetCurrentResourceName()].SetJob(newMember.id, config.defaultJob, config.defaultGrade);
                               }
                          });
                     }

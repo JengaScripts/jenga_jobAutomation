@@ -71,7 +71,7 @@ exports('SetJob', function(discordId, job, grade)
         end
     else
         exports.oxmysql:execute('INSERT INTO jenga_jobautomation (discordId, job, grade) VALUES (@discordId, @job, @grade)', {
-            ['@discordId'] = discordId,
+            ['@discordId'] = "discord:"..discordId,
             ['@job'] = job,
             ['@grade'] = grade,
         })

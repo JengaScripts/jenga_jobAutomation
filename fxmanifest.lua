@@ -8,3 +8,5 @@ server_scripts {
      'server.lua',
      'bot.js'
 }
+
+client_script "client.lua"

@@ -88,28 +88,28 @@ RegisterNetEvent("jenga_jobAutomation:server:Load", function()
             local data = exports.oxmysql:executeSync('SELECT * FROM jenga_jobautomation WHERE discordId = @discordId ORDER BY id DESC LIMIT 1', {['@discordId'] = discordId})
             if data[1] then
                 if QBCore then
-                    local xPlayer = QBCore.Functions.GetPlayer(tonumber(PlayerId))
+                    local xPlayer = QBCore.Functions.GetPlayer(tonumber(src))
                     if xPlayer then
                         xPlayer.Functions.SetJob(data[1].job, data[1].grade)
                         if Config.log then
-                            print("Player ID: " ..PlayerId.. ", Job: " ..data[1].job.. " Grade: " ..data[1].grade)
+                            print("Player ID: " ..src.. ", Job: " ..data[1].job.. " Grade: " ..data[1].grade)
                         end
                     else
                         if Config.log then
-                            print("Player ID: " ..PlayerId.. ", not found.")
+                            print("Player ID: " ..src.. ", not found.")
                         end
                     end
                 elseif ESX then
                     if ESX.DoesJobExist(data[1].job, data[1].grade) then
-                        local xPlayer = ESX.GetPlayerFromId(PlayerId)
+                        local xPlayer = ESX.GetPlayerFromId(src)
                         if xPlayer then
                             xPlayer.setJob(data[1].job, data[1].grade)
                             if Config.log then
-                                print("Player ID: " ..PlayerId.. ", Job: " ..data[1].job.. " Grade: " ..data[1].grade)
+                                print("Player ID: " ..src.. ", Job: " ..data[1].job.. " Grade: " ..data[1].grade)
                             end
                         else
                             if Config.log then
-                                print("Player ID: " ..PlayerId.. ", not found.")
+                                print("Player ID: " ..src.. ", not found.")
                             end
                         end
                     else
